@@ -1,5 +1,9 @@
-Source: http://overthewire.org/wargames/bandit/bandit0.html
+Bandit
+0 -> 1
 
+Source: http://overthewire.org/wargames/bandit/bandit0.html
+		http://overthewire.org/wargames/bandit/bandit1.html
+		
 I use PuTTY to create the SSH connection to bandit.labs.overthewire.org, on port 2220.
 Logged in as bandit0 with password bandit0 and read the welcome message.
 
