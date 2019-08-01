@@ -1,0 +1,32 @@
+Bandit
+1 -> 2
+
+Source: http://overthewire.org/wargames/bandit/bandit2.html
+
+I use PuTTY to create the SSH connection to bandit.labs.overthewire.org, on port 2220.
+Logged in as bandit1 with password boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+
+Level Goal:
+The password for the next level is stored in a file called - located in the home directory.
+
+Useful Commands:
+ls - list directory contents (man ls)
+cd - change shell working directory (help cd)
+cat - concatenate files and print to standard output (man cat)
+file - determine file type (man file)
+du - estimate file space usage (man du)
+find - search for file in a directory (man find)
+
+Helpful Reading:
+https://www.google.com/search?q=dashed+filename
+http://tldp.org/LDP/abs/html/special-chars.html
+
+Solution:
+#pwd
+/home/bandit1
+#ls -l
+- file is the only thing in the directory
+#cat ./-
+CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+
+Password for Next Level: CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9

@@ -1,0 +1,31 @@
+Bandit
+2 -> 3
+
+Source: http://overthewire.org/wargames/bandit/bandit3.html
+
+I use PuTTY to create the SSH connection to bandit.labs.overthewire.org, on port 2220.
+Logged in as bandit2 with password CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+
+Level Goal:
+The password for the next level is stored in a file called spaces in this filename located in the home directory.
+
+Useful Commands:
+ls - list directory contents (man ls)
+cd - change shell working directory (help cd)
+cat - concatenate files and print to standard output (man cat)
+file - determine file type (man file)
+du - estimate file space usage (man du)
+find - search for file in a directory (man find)
+
+Helpful Reading:
+https://www.google.com/search?q=spaces+in+filename
+
+Solution:
+#pwd
+/home/bandit2
+#ls -l
+spaces in this filename is the only thing in the directory
+#cat spaces\ in\ this\ filename
+UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+
+Password for Next Level: UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
