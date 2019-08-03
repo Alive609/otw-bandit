@@ -1,0 +1,62 @@
+Bandit
+5 -> 6
+
+Source: http://overthewire.org/wargames/bandit/bandit6.html
+
+I use PuTTY to create the SSH connection to bandit.labs.overthewire.org, on port 2220.
+Logged in as bandit5 with password pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+
+Level Goal:
+The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties:
+    human-readable
+    1033 bytes in size
+    not executable
+
+
+Useful Commands:
+ls - list directory contents (man ls)
+cd - change shell working directory (help cd)
+cat - concatenate files and print to standard output (man cat)
+file - determine file type (man file)
+du - estimate file space usage (man du)
+find - search for file in a directory (man find)
+
+Solution:
+#pwd
+/home/bandit5
+#ls
+inhere directory is the only thing in the directory
+#cd inhere/
+#ls -al
+20 directories called maybehere
+#ls -lAR |grep 1033
+-rw-r----- 1 root bandit5 1033 Oct 16  2018 .file2
+#find -name ".file2"
+./maybehere09/.file2
+./maybehere01/.file2
+./maybehere13/.file2
+./maybehere04/.file2
+./maybehere06/.file2
+./maybehere19/.file2
+./maybehere15/.file2
+./maybehere18/.file2
+./maybehere14/.file2
+./maybehere11/.file2
+./maybehere00/.file2
+./maybehere17/.file2
+./maybehere10/.file2
+./maybehere16/.file2
+./maybehere03/.file2
+./maybehere08/.file2
+./maybehere02/.file2
+./maybehere07/.file2
+./maybehere12/.file2
+./maybehere05/.file2
+#find -name ".file2" | du -ab | grep 1033
+1033    ./maybehere07/.file2
+#du -ab | grep 1033
+1033    ./maybehere07/.file2
+#cat maybehere07/.file2
+DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+
+Password for Next Level: DXjZPULLxYr17uwoI01bNLQbtFemEgo7

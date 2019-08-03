@@ -1,0 +1,31 @@
+Bandit
+3 -> 4
+
+Source: http://overthewire.org/wargames/bandit/bandit4.html
+
+I use PuTTY to create the SSH connection to bandit.labs.overthewire.org, on port 2220.
+Logged in as bandit3 with password UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+
+Level Goal:
+The password for the next level is stored in a hidden file in the inhere directory.
+
+Useful Commands:
+ls - list directory contents (man ls)
+cd - change shell working directory (help cd)
+cat - concatenate files and print to standard output (man cat)
+file - determine file type (man file)
+du - estimate file space usage (man du)
+find - search for file in a directory (man find)
+
+Solution:
+#pwd
+/home/bandit3
+#ls -l
+inhere directory is the only thing in the directory
+#cd inhere/
+#ls -al
+.hidden file is the only thing in the directory
+#cat .hidden
+pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+
+Password for Next Level: pIwrPrtPN36QITSp3EQaw936yaFoFgAB

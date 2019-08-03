@@ -1,0 +1,43 @@
+Bandit
+4 -> 5
+
+Source: http://overthewire.org/wargames/bandit/bandit5.html
+
+I use PuTTY to create the SSH connection to bandit.labs.overthewire.org, on port 2220.
+Logged in as bandit4 with password pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+
+Level Goal:
+The password for the next level is stored in the only human-readable file in the inhere directory.
+Tip: if your terminal is messed up, try the “reset” command.
+
+Useful Commands:
+ls - list directory contents (man ls)
+cd - change shell working directory (help cd)
+cat - concatenate files and print to standard output (man cat)
+file - determine file type (man file)
+du - estimate file space usage (man du)
+find - search for file in a directory (man find)
+
+Solution:
+#pwd
+/home/bandit4
+#ls
+inhere directory is the only thing in the directory
+#cd inhere/
+#ls -al
+10 files starting with dashes
+#file ./*
+./-file00: data
+./-file01: data
+./-file02: data
+./-file03: data
+./-file04: data
+./-file05: data
+./-file06: data
+./-file07: ASCII text
+./-file08: data
+./-file09: data
+#cat ./-file07
+koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+
+Password for Next Level: koReBOKuIDDepwhWk7jZC0RTdopnAYKh
