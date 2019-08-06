@@ -1,0 +1,40 @@
+Bandit
+6 -> 7
+
+Source: http://overthewire.org/wargames/bandit/bandit7.html
+
+I use PuTTY to create the SSH connection to bandit.labs.overthewire.org, on port 2220.
+Logged in as bandit6 with password DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+
+Level Goal:
+The password for the next level is stored somewhere on the server and has all of the following properties:
+    owned by user bandit7
+    owned by group bandit6
+    33 bytes in size
+
+Useful Commands:
+ls - list directory contents (man ls)
+cd - change shell working directory (help cd)
+cat - concatenate files and print to standard output (man cat)
+file - determine file type (man file)
+du - estimate file space usage (man du)
+find - search for file in a directory (man find)
+grep - searches file for given pattern (man grep)
+
+Solution:
+#pwd
+/home/bandit6
+#ls -Al
+-rw-r--r-- 1 root root  220 May 15  2017 .bash_logout
+-rw-r--r-- 1 root root 3526 May 15  2017 .bashrc
+-rw-r--r-- 1 root root  675 May 15  2017 .profile
+#ls -AlR / | grep bandit6 | grep 33
+......list of files/permission denials.......
+-rw-r----- 1 bandit7 bandit6      33 Oct 16  2018 bandit7.password
+#find / -name "bandit7.password"
+......list of permission denials.......
+/var/lib/dpkg/info/bandit7.password
+#cat /var/lib/dpkg/info/bandit7.password
+HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+
+Password for Next Level: HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
