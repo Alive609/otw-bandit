@@ -1,0 +1,36 @@
+Bandit
+11 -> 12
+
+Source: http://overthewire.org/wargames/bandit/bandit12.html
+
+I use PuTTY to create the SSH connection to bandit.labs.overthewire.org, on port 2220.
+Logged in as bandit11 with password IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+
+Level Goal:
+The password for the next level is stored in the file data.txt, 
+where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions.
+
+Useful Commands:
+grep - searches file for given pattern (man grep)
+sort - sort lines of text files (man sort)
+uniq - report or omit repeated lines (man uniq)
+strings - print the strings of printable characters in files (man strings)
+base64 - base64 encode/decode data and print to standard output (man base64)
+tr - translate or delete characters (man tr)
+tar - an archiving utility (man tar)
+gzip/gunzip - compress or expand files (man gzip)
+bzip2 - a block-sorting file compressor (man bzip2)
+xxd - make a hexdump or do the reverse (man xxd)
+
+Helpful Reading:
+https://en.wikipedia.org/wiki/ROT13
+
+Solution:
+#pwd
+/home/bandit11
+#ls -l
+-rw-r----- 1 bandit12 bandit11 49 Oct 16  2018 data.txt
+#cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+
+Password for Next Level: 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
